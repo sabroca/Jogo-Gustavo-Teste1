@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#101522"><title>Heróis da Jornada — Exploração</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <section id="setup" class="setup">
+    <div class="mark">⚔</div><p class="eyebrow">AVENTURA • EXPLORAÇÃO • COMBATE</p>
+    <h1>HERÓIS DA<br><em>JORNADA</em></h1>
+    <p class="intro">Explore o mapa, encontre os rivais e vença as 10 rodadas para encarar o chefão.</p>
+    <label for="heroName">QUAL É O NOME DO SEU PERSONAGEM?</label>
+    <input id="heroName" maxlength="16" placeholder="Ex.: Nome" autocomplete="off">
+    <div class="preview"><span class="mini-hero">🧑🏻‍🚀</span><div><b id="previewName">Nome</b><small>PERSONAGEM JOGÁVEL</small></div><span class="swatch"></span></div>
+    <button id="playBtn" class="main-btn">ENTRAR NO MAPA <span>→</span></button>
+    <p class="hint">teste gustavo</p>
+  </section>
+
+  <section id="game" class="game" hidden>
+    <canvas id="world" aria-label="Mapa do jogo. Movimente o personagem e encontre os adversários."></canvas>
+    <div class="top-hud">
+      <div class="player-tag"><span class="avatar">🧑🏻‍🚀</span><div><b id="hudName">AVENTUREIRO</b><small id="roundLabel">RODADA 1 / 10</small></div></div>
+      <div class="health-card"><div class="health-top"><span>VIDA</span><b id="hpText">100 / 100</b></div><div class="health-track"><i id="hpBar"></i></div><small id="status">PROCURE O RIVAL</small></div>
+    </div>
+    <div class="objective"><span class="objective-dot"></span><span id="objectiveText">Explore o mapa e encontre o primeiro rival.</span></div>
+    <div class="mini-map" aria-label="Minimapa"><div class="map-title">MAPA</div><canvas id="map" width="100" height="100"></canvas></div>
+    <div id="toast" class="toast" hidden></div>
+    <div class="mobile-controls">
+      <div id="joystick" class="joystick"><div class="joy-ring"></div><div id="stick" class="stick"></div></div>
+      <div class="combat-controls">
+        <button id="hitBtn" class="combat-btn hit"><span>👊</span><small>ATACAR</small></button>
+        <button id="dashBtn" class="combat-btn dash"><span>💨</span><small>ESQUIVAR</small></button>
+      </div>
+    </div>
+    <div class="desktop-hint">WASD / setas: mover · Espaço: atacar · Shift: esquivar</div>
+    <button id="pauseBtn" class="pause">Ⅱ</button>
+    <div id="overlay" class="overlay" hidden><div class="overlay-card"><div id="overlayIcon">⏸️</div><h2 id="overlayTitle">PAUSADO</h2><p id="overlayText">Respire e volte para a aventura.</p><button id="resumeBtn" class="main-btn">CONTINUAR</button><button id="restartBtn" class="secondary-btn">RECOMEÇAR</button></div></div>
+  </section>
+  <section id="result" class="setup result" hidden><div id="resultIcon" class="result-icon">🏆</div><p class="eyebrow" id="resultEyebrow">LENDA CRIADA</p><h1 id="resultTitle">VOCÊ<br><em>VENCEU!</em></h1><p id="resultText" class="intro"></p><div class="result-score"><span>RIVAIS DERROTADOS</span><b id="score">11 / 11</b></div><button id="againBtn" class="main-btn">JOGAR NOVAMENTE ↻</button><button id="menuBtn" class="secondary-btn">TROCAR PERSONAGEM</button></section>
+</main>
+<script src="script.js"></script>
+</body></html>
